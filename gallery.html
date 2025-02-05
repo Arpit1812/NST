@@ -71,6 +71,31 @@
       object-fit: contain;
     }
 
+    .modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.modal-nav.next {
+  right: 10px;
+}
+
+.modal-nav.prev {
+  left: 10px;
+}
+
+.modal-nav:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
     .close {
       position: absolute;
       top: 20px;
@@ -84,6 +109,32 @@
     .close:hover {
       color: #ccc;
     }
+    
+    .contact-data-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse; /* Ensures new items are added to the left */
+  justify-content: flex-end; /* Aligns items from left to right */
+  gap:10px; /* Adjusts spacing */
+}
+
+.contact-data__item { 
+  flex: 1;
+  min-width: 220px; /* Reduce width slightly to allow elements to be closer */
+  margin: 5px; /* Reduce margins */
+  padding: 8px; /* Reduce padding inside each box */
+  display: flex; /* Ensure child elements are aligned inside */
+  flex-direction: column; /* Stack child elements vertically */
+  align-items: flex-start; /* Align child elements (like the inner div) to the left */
+}
+
+.contact-data__text {
+  margin-left: 0;  /* Ensure no left margin */
+  padding-left: 0;  /* Ensure no left padding */
+  width: 100%; /* Make it take up full width */
+}
+
+
 
     @keyframes fadeIn {
       from {
@@ -274,7 +325,7 @@
                 >
                   <div class="block__descr">
                     <h2
-                      style="font-size: 50px; margin-bottom: 30px"
+                      style="font-size: 26px; margin-bottom: 30px"
                       class="reveal-type animate-in-up"
                     >
                       Crafting Perfection in Stone <br />
@@ -295,6 +346,7 @@
       <span class="close" id="closeModal">&times;</span>
       <img class="modal-content" id="modalImage" alt="Large View" />
     </div>
+    
     <section
       id="contact"
       class="inner contact inner-grid-bottom no-padding-bottom"
@@ -321,118 +373,87 @@
             <!-- Inner Section Content Start -->
             <div class="col-12 col-xl-8">
               <div class="inner__content">
-                <!-- Content Block - H2 Section Title Start -->
-
-                <!-- Content Block - H2 Section Title End -->
-
                 <div class="content__block grid-block">
                   <div class="container-fluid p-0 contact-data">
-                    <div class="row g-0">
-                      <!-- First Column -->
-                      <div
-                        class="col-12 col-md-6 col-lg-6 contact-data__item grid-item"
-                      >
-                        <p
-                          style="text-decoration: underline"
-                          class="contact-data__title tagline-chapter animate-in-up"
-                        >
+                    <div class="row g-0 contact-data-wrapper">
+                      
+                      <!-- Fourth Column (Email) -->
+                      <div class="contact-data__item grid-item">
+                        <p class="contact-data__title tagline-chapter animate-in-up">
+                          Email
+                        </p>
+                        <p class="contact-data__text small type-basic-160lh">
+                          <a class="link-small-160lh animate-in-up"
+                            href="mailto:naturalstonetraders@gmail.com">
+                            naturalstonetraders@gmail.com
+                          </a><br />
+                          <a class="link-small-160lh animate-in-up"
+                            href="mailto:sales.nststone@gmail.com">
+                            sales.nststone@gmail.com
+                          </a>
+                        </p>
+                      </div>
+            
+                      <!-- Third Column (Phone) -->
+                      <div class="contact-data__item grid-item">
+                        <p class="contact-data__title tagline-chapter animate-in-up">
+                          Phone
+                        </p>
+                        <p class="contact-data__text small type-basic-160lh">
+                          <a class="link-small-160lh animate-in-up"
+                            href="tel:+16472877869">
+                            +1 (647) 287-7869
+                          </a><br />
+                          <a class="link-small-160lh animate-in-up"
+                            href="tel:+16475233623">
+                            +1 (647)-523-3623
+                          </a>
+                        </p>
+                      </div>
+            
+                      <!-- Second Column (Hours of Operation) -->
+                      <div class="contact-data__item grid-item">
+                        <p class="contact-data__title tagline-chapter animate-in-up">
+                          Hours of Operation
+                        </p>
+                        <p class="contact-data__text small type-basic-160lh">
+                          <span class="animate-in-up">Monday - Friday: 8:00 AM - 4:30 PM</span><br />
+                          <span class="animate-in-up">Saturday: Appointments only</span><br />
+                          <span class="animate-in-up">Sunday: Closed</span>
+                        </p>
+                      </div>
+            
+                      <!-- First Column (Location) -->
+                      <div class="contact-data__item grid-item">
+                        <p class="contact-data__title tagline-chapter animate-in-up">
                           Location
                         </p>
                         <p class="contact-data__text small type-basic-160lh">
-                          <a
-                            class="link-small-160lh animate-in-up"
+                          <a class="link-small-160lh animate-in-up"
                             href="https://maps.app.goo.gl/g28hCHCGMMyEEqMU7"
-                            target="_blank"
-                          >
+                            target="_blank">
                             14004 Woodbine Avenue <br />
                             Stouffville (Gormley),<br />
                             Ontario, L0H 1G0 Canada
                           </a>
                         </p>
                       </div>
-
-                      <!-- Second Column -->
-                      <div
-                        class="col-12 col-md-6 col-lg-6 contact-data__item grid-item"
-                      >
-                        <p
-                          style="text-decoration: underline"
-                          class="contact-data__title tagline-chapter animate-in-up"
-                        >
-                          Hours of Operation
-                        </p>
-                        <p class="contact-data__text small type-basic-160lh">
-                          <span class="animate-in-up"
-                            >Monday - Friday: 8:00 AM - 4:30 PM</span
-                          ><br />
-                          <span class="animate-in-up"
-                            >Saturday: Appointments only</span
-                          ><br />
-                          <span class="animate-in-up">Sunday: Closed</span>
-                        </p>
-                      </div>
-
-                      <!-- Third Column -->
-                      <div
-                        class="col-12 col-md-6 col-lg-6 contact-data__item grid-item"
-                      >
-                        <p
-                          style="text-decoration: underline"
-                          class="contact-data__title tagline-chapter animate-in-up"
-                        >
-                          Phone
-                        </p>
-                        <p class="contact-data__text small type-basic-160lh">
-                          <a
-                            class="link-small-160lh animate-in-up"
-                            href="tel:+16472877869"
-                            >+1 (647) 287-7869</a
-                          ><br />
-                          <a
-                            class="link-small-160lh animate-in-up"
-                            href="tel:+16475233623"
-                            >+1 (647)-523-3623</a
-                          >
-                        </p>
-                      </div>
-
-                      <!-- Fourth Column -->
-                      <div
-                        class="col-12 col-md-6 col-lg-6 contact-data__item grid-item"
-                      >
-                        <p
-                          style="text-decoration: underline"
-                          class="contact-data__title tagline-chapter animate-in-up"
-                        >
-                          Email
-                        </p>
-                        <p class="contact-data__text small type-basic-160lh">
-                          <a
-                            class="link-small-160lh animate-in-up"
-                            href="mailto:naturalstonetraders@gmail.com"
-                            >naturalstonetraders@gmail.com</a
-                          ><br />
-                          <a
-                            class="link-small-160lh animate-in-up"
-                            href="mailto:sales.nststone@gmail.com"
-                            >sales.nststone@gmail.com</a
-                          >
-                        </p>
-                      </div>
-                      <div style="padding-top: 30px" class="contact-data__item">
-                        <p
-                          style="text-decoration: underline "
-                          class="contact-data__titl tagline-chapter animate-in-up"
-                        >
+            
+                      <!-- Areas We Serve -->
+                      <div style="padding-top: 30px;" class="contact-data__item">
+                        <p class="contact-data__title tagline-chapter animate-in-up">
                           Area we serve
                         </p>
                         <div class="contact-data__text small" id="areas-we-serve"></div>
                       </div>
+                      
+            
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            
             <!-- Inner Section Content End -->
 
             <!-- Inner Section Aside Start -->
@@ -552,64 +573,109 @@
       } else {
         console.error("Div with id 'areas-we-serve' not found.");
       }
+  // The array of image paths (same as before)x
+  const imagePaths = [
+    "image/stone/NST Sandstone/dovegray/dove grey 6-min.jpg",
+    "image/stone/NST Sandstone/dovegray/DSC_0261.jpg",
+    "image/stone/NST Sandstone/dovegray/DSC_0257.jpg",
+    "image/stone/NST Sandstone/bronte/autumn-Brown-sandstone-005[1].jpg",
+    "image/stone/NST Sandstone/bronte/IMG_30361.jpg",
+    "image/stone/marble/urban grey/DSC_0138.jpg",
+    "image/stone/NST Limestone/Kota Black/Photo from NST.jpg",
+    "image/stone/NST Limestone/Kota Black/DSC_0078.jpg",
+    "image/stone/NST Limestone/Silver Valley Dazzle/Screenshot_20230610_171015_Instagram.jpg",
+    "image/stone/NST Limestone/Silver Valley Dazzle/brandon work 4.jpg",
+    "image/stone/NST Limestone/Antique Black/DSC_0346.jpg",
+    "image/stone/NST Limestone/Antique Black/DSC_0361.jpg",
+    "image/stone/granite/blackgalaxy/20240621_124803.jpg",
+    "image/stone/granite/blackgalaxy/DSC_0198 - Copy.jpg",
+    "image/stone/granite/darkebony/Picsart_22-11-14_19-05-39-232.jpg",
+    "image/stone/granite/raven/DSC_0009.jpg",
+    "image/stone/granite/raven/Screenshot_20220926_175132.jpg",
+    "image/stone/marble/urban grey/20230815_104215.jpg",
+  ];
 
-      const imagePaths = [
-        "image/stone/NST Sandstone/dovegray/dove grey 6-min.jpg",
-        "image/stone/NST Sandstone/dovegray/DSC_0261.jpg",
-            "image/stone/NST Sandstone/dovegray/DSC_0257.jpg",
-            "image/stone/NST Sandstone/bronte/autumn-Brown-sandstone-005[1].jpg",
-            "image/stone/NST Sandstone/bronte/IMG_30361.jpg",
-            "image/stone/marble/urban grey/DSC_0138.jpg",
-            "image/stone/NST Limestone/Kota Black/Photo from NST.jpg",
-            "image/stone/NST Limestone/Kota Black/DSC_0078.jpg",
-            "image/stone/NST Limestone/Silver Valley Dazzle/Screenshot_20230610_171015_Instagram.jpg",
-            "image/stone/NST Limestone/Silver Valley Dazzle/brandon work 4.jpg",
-            "image/stone/NST Limestone/Antique Black/DSC_0346.jpg",
-            "image/stone/NST Limestone/Antique Black/DSC_0361.jpg",
-            "image/stone/granite/blackgalaxy/20240621_124803.jpg",
-            "image/stone/granite/blackgalaxy/DSC_0198 - Copy.jpg",
-            "image/stone/granite/darkebony/Picsart_22-11-14_19-05-39-232.jpg",
-            "image/stone/granite/raven/DSC_0009.jpg",
-            "image/stone/granite/raven/Screenshot_20220926_175132.jpg",
-            "image/stone/marble/urban grey/20230815_104215.jpg",
-      ];
+  // Populate the gallery dynamically (same as before)
+  const galleryDiv = document.querySelector(".gal-div");
 
-      // Populate the gallery dynamically
-      const galleryDiv = document.querySelector(".gal-div");
+  imagePaths.forEach((imagePath) => {
+    const imgElement = document.createElement("img");
+    imgElement.src = imagePath;
+    imgElement.alt = "Gallery Image";
+    imgElement.classList.add("gal-img");
+    galleryDiv.appendChild(imgElement);
+  });
 
-      imagePaths.forEach((imagePath) => {
-        const imgElement = document.createElement("img");
-        imgElement.src = imagePath;
-        imgElement.alt = "Gallery Image";
-        imgElement.classList.add("gal-img");
-        galleryDiv.appendChild(imgElement);
-      });
+  // Modal functionality
+  const modal = document.getElementById("imageModal");
+  const modalImage = document.getElementById("modalImage");
+  const closeModal = document.getElementById("closeModal");
+  const nextButton = document.createElement('span');
+  const prevButton = document.createElement('span');
 
-      // Modal functionality
-      const modal = document.getElementById("imageModal");
-      const modalImage = document.getElementById("modalImage");
-      const closeModal = document.getElementById("closeModal");
+  // Add navigation buttons (right and left arrows)
+  nextButton.classList.add("modal-nav", "next");
+  nextButton.innerHTML = "&#8594;"; // Right arrow
+  prevButton.classList.add("modal-nav", "prev");
+  prevButton.innerHTML = "&#8592;"; // Left arrow
 
-      // Open modal on image click
-      galleryDiv.addEventListener("click", (event) => {
-        if (event.target.tagName === "IMG") {
-          modal.style.display = "block";
-          modalImage.src = event.target.src;
-        }
-      });
+  // Append to the modal
+  modal.appendChild(nextButton);
+  modal.appendChild(prevButton);
 
-      // Close modal on clicking the close button
-      closeModal.addEventListener("click", () => {
-        modal.style.display = "none";
-      });
+  // Open modal on image click
+  galleryDiv.addEventListener("click", (event) => {
+    if (event.target.tagName === "IMG") {
+      modal.style.display = "block";
+      modalImage.src = event.target.src;
+    }
+  });
 
-      // Close modal on clicking outside the image
-      modal.addEventListener("click", (event) => {
-        if (event.target === modal) {
-          modal.style.display = "none";
-        }
-      });
-    </script>
+  // Close modal on clicking the close button
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Close modal on clicking outside the image
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  let currentImageIndex = -1; // To store the current image index
+
+  // Function to update the modal image based on the index
+  function updateModalImage(index) {
+    if (index >= 0 && index < imagePaths.length) {
+      modalImage.src = imagePaths[index];
+      currentImageIndex = index;
+    }
+  }
+
+  // Show next image
+  nextButton.addEventListener("click", () => {
+    let nextIndex = currentImageIndex + 1;
+    if (nextIndex >= imagePaths.length) nextIndex = 0; // Loop back to the first image
+    updateModalImage(nextIndex);
+  });
+
+  // Show previous image
+  prevButton.addEventListener("click", () => {
+    let prevIndex = currentImageIndex - 1;
+    if (prevIndex < 0) prevIndex = imagePaths.length - 1; // Loop back to the last image
+    updateModalImage(prevIndex);
+  });
+
+  // Open modal on the first click and set initial index
+  galleryDiv.addEventListener("click", (event) => {
+    if (event.target.tagName === "IMG") {
+      const clickedIndex = imagePaths.indexOf(event.target.src);
+      updateModalImage(clickedIndex); // Set the current image index
+      modal.style.display = "block";
+    }
+  });
+</script>
     <script src="js/app.js"></script>
   </body>
 </html>
