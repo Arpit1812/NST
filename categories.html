@@ -106,6 +106,30 @@
     .ph-arrow-right{
       color: #fff!important;
     }
+
+    .contact-data-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse; /* Ensures new items are added to the left */
+  justify-content: flex-end; /* Aligns items from left to right */
+  gap:10px; /* Adjusts spacing */
+}
+
+.contact-data__item { 
+  flex: 1;
+  min-width: 220px; /* Reduce width slightly to allow elements to be closer */
+  margin: 5px; /* Reduce margins */
+  padding: 8px; /* Reduce padding inside each box */
+  display: flex; /* Ensure child elements are aligned inside */
+  flex-direction: column; /* Stack child elements vertically */
+  align-items: flex-start; /* Align child elements (like the inner div) to the left */
+}
+
+.contact-data__text {
+  margin-left: 0;  /* Ensure no left margin */
+  padding-left: 0;  /* Ensure no left padding */
+  width: 100%; /* Make it take up full width */
+}
     
   </style>
   <body>
@@ -324,105 +348,80 @@
 
               <!-- Content Block - H2 Section Title End -->
 
-              <div class="content__block grid-block">
-                <div class="container-fluid p-0 contact-data">
-                  <div class="row g-0">
-                    <!-- First Column -->
-                    <div
-                      class="col-12 col-md-6 col-lg-6 contact-data__item grid-item"
-                    >
-                      <p
-                        style="text-decoration: underline"
-                        class="contact-data__title tagline-chapter animate-in-up"
-                      >
-                        Location
-                      </p>
-                      <p class="contact-data__text small type-basic-160lh">
-                        <a
-                          class="link-small-160lh animate-in-up"
-                          href="https://maps.app.goo.gl/g28hCHCGMMyEEqMU7"
-                          target="_blank"
-                        >
-                          14004 Woodbine Avenue <br>
-                          Stouffville (Gormley),<br>
-                          Ontario, L0H 1G0 Canada
-                        </a>
-                      </p>
-                    </div>
-
-                    <!-- Second Column -->
-                    <div
-                      class="col-12 col-md-6 col-lg-6 contact-data__item grid-item"
-                    >
-                      <p
-                        style="text-decoration: underline"
-                        class="contact-data__title tagline-chapter animate-in-up"
-                      >
-                        Hours of Operation
-                      </p>
-                      <p class="contact-data__text small type-basic-160lh">
-                        <span class="animate-in-up"
-                          >Monday - Friday: 8:00 AM - 4:30 PM</span
-                        ><br />
-                        <span class="animate-in-up"
-                          >Saturday: Appointments only</span
-                        ><br />
-                        <span class="animate-in-up">Sunday: Closed</span>
-                      </p>
-                    </div>
-
-                    <!-- Third Column -->
-                    <div
-                      class="col-12 col-md-6 col-lg-6 contact-data__item grid-item"
-                    >
-                      <p
-                        style="text-decoration: underline"
-                        class="contact-data__title tagline-chapter animate-in-up"
-                      >
-                        Phone
-                      </p>
-                      <p class="contact-data__text small type-basic-160lh">
-                        <a
-                          class="link-small-160lh animate-in-up"
-                          href="tel:+16472877869"
-                          >+1 (647) 287-7869</a
-                        ><br />
-                        <a
-                          class="link-small-160lh animate-in-up"
-                          href="tel:+16475233623"
-                          >+1 (647)-523-3623</a
-                        >
-                      </p>
-                    </div>
-
-                    <!-- Fourth Column -->
-                    <div
-                      class="col-12 col-md-6 col-lg-6 contact-data__item grid-item"
-                    >
-                      <p
-                        style="text-decoration: underline"
-                        class="contact-data__title tagline-chapter animate-in-up"
-                      >
-                        Email
-                      </p>
-                      <p class="contact-data__text small type-basic-160lh">
-                        <a
-                          class="link-small-160lh animate-in-up"
-                          href="mailto:naturalstonetraders@gmail.com"
-                          >naturalstonetraders@gmail.com</a
-                        ><br />
-                        <a
-                          class="link-small-160lh animate-in-up"
-                          href="mailto:sales.nststone@gmail.com"
-                          >sales.nststone@gmail.com</a
-                        >
-                      </p>
+              <div class="col-12 col-xl-8">
+                <div class="inner__content">
+                  <div class="content__block grid-block">
+                    <div class="container-fluid p-0 contact-data">
+                      <div class="row g-0 contact-data-wrapper">
+                        
+                        <!-- Fourth Column (Email) -->
+                        <div class="contact-data__item grid-item">
+                          <p class="contact-data__title tagline-chapter animate-in-up">
+                            Email
+                          </p>
+                          <p class="contact-data__text small type-basic-160lh">
+                            <a class="link-small-160lh animate-in-up"
+                              href="mailto:naturalstonetraders@gmail.com">
+                              naturalstonetraders@gmail.com
+                            </a><br />
+                            <a class="link-small-160lh animate-in-up"
+                              href="mailto:sales.nststone@gmail.com">
+                              sales.nststone@gmail.com
+                            </a>
+                          </p>
+                        </div>
+              
+                        <!-- Third Column (Phone) -->
+                        <div class="contact-data__item grid-item">
+                          <p class="contact-data__title tagline-chapter animate-in-up">
+                            Phone
+                          </p>
+                          <p class="contact-data__text small type-basic-160lh">
+                            <a class="link-small-160lh animate-in-up"
+                              href="tel:+16472877869">
+                              +1 (647) 287-7869
+                            </a><br />
+                            <a class="link-small-160lh animate-in-up"
+                              href="tel:+16475233623">
+                              +1 (647)-523-3623
+                            </a>
+                          </p>
+                        </div>
+              
+                        <!-- Second Column (Hours of Operation) -->
+                        <div class="contact-data__item grid-item">
+                          <p class="contact-data__title tagline-chapter animate-in-up">
+                            Hours of Operation
+                          </p>
+                          <p class="contact-data__text small type-basic-160lh">
+                            <span class="animate-in-up">Monday - Friday: 8:00 AM - 4:30 PM</span><br />
+                            <span class="animate-in-up">Saturday: Appointments only</span><br />
+                            <span class="animate-in-up">Sunday: Closed</span>
+                          </p>
+                        </div>
+              
+                        <!-- First Column (Location) -->
+                        <div class="contact-data__item grid-item">
+                          <p class="contact-data__title tagline-chapter animate-in-up">
+                            Location
+                          </p>
+                          <p class="contact-data__text small type-basic-160lh">
+                            <a class="link-small-160lh animate-in-up"
+                              href="https://maps.app.goo.gl/g28hCHCGMMyEEqMU7"
+                              target="_blank">
+                              14004 Woodbine Avenue <br />
+                              Stouffville (Gormley),<br />
+                              Ontario, L0H 1G0 Canada
+                            </a>
+                          </p>
+                        </div>
+                        
+              
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
           <!-- Inner Section Content End -->
 
           <!-- Inner Section Aside Start -->
