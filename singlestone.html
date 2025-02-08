@@ -9,6 +9,33 @@
     <link rel="stylesheet" type="text/css" href="../css/plugins.css" />
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
   </head>
+  <style>
+    .contact-data-wrapper {
+    display: flex;
+    flex-direction: row; /* Aligns sections horizontally */
+    justify-content: space-between; /* Spaces them evenly */
+    flex-wrap: wrap; /* Ensures responsiveness */
+    gap: 30px; /* Adds spacing between sections */
+  }
+
+  .contact-data__item {
+    flex: 1; /* Distributes space evenly */
+    min-width: 200px; /* Prevents items from shrinking */
+  }
+
+  .contact-data__item .contact-data__text {
+    line-height: 1.2; /* Reduce default line spacing */
+    margin-bottom: 5px; /* Reduce gap between lines */
+}
+
+
+  @media (max-width: 768px) {
+    .contact-data-wrapper {
+      flex-direction: column; /* Stack items on mobile */
+      align-items: center;
+    }
+  }
+  </style>
   <body style="overflow-x: hidden">
     <!-- Mobile Navigation -->
     <div id="mobileMenu" class="mobile-menu">
@@ -268,142 +295,72 @@
       class="inner contact inner-grid-bottom no-padding-bottom"
       style="z-index: 100; padding-top: 20px"
     >
-      <div class="inner__wrapper">
-        <div class="container-fluid p-0">
-          <div class="row g-0">
-            <!-- Inner Section Name Start -->
-            <div style="opacity: 0" class="col-12 col-xl-2">
-              <div class="inner__name">
-                <!-- Content Block - Section Name Start -->
-                <div class="content__block name-block">
-                  <span class="section-name icon-right animate-in-up">
-                    <span class="section-name-caption">Contact</span>
-                    <i class="ph ph-arrow-down-right"></i>
-                  </span>
-                </div>
-                <!-- Content Block - Section Name Start -->
+    <div class="inner__wrapper">
+      <div class="container-fluid p-0">
+        <div class="row g-0">
+          <!-- Inner Section Name Start -->
+          <div class="col-12 col-xl-2" style="opacity: 0">
+            <div class="inner__name">
+              <div class="content__block name-block">
+                <span class="section-name icon-right animate-in-up">
+                  <span class="section-name-caption">Contact</span>
+                  <i class="ph ph-arrow-down-right"></i>
+                </span>
               </div>
             </div>
-            <!-- Inner Section Name End -->
-
-            <!-- Inner Section Content Start -->
-            <div class="col-12 col-xl-8">
-              <div class="inner__content">
-                <!-- Content Block - H2 Section Title Start -->
-
-                <!-- Content Block - H2 Section Title End -->
-
-                <div class="content__block grid-block">
-                  <div class="container-fluid p-0 contact-data">
-                    <div class="row g-0">
-                      <!-- First Column -->
-                      <div
-                        class="col-12 col-md-6 col-lg-6 contact-data__item grid-item"
-                      >
-                        <p
-                          style="text-decoration: underline"
-                          class="contact-data__title tagline-chapter animate-in-up"
-                        >
-                          Location
-                        </p>
-                        <p class="contact-data__text small type-basic-160lh">
-                          <a
-                            class="link-small-160lh animate-in-up"
-                            href="https://maps.app.goo.gl/g28hCHCGMMyEEqMU7"
-                            target="_blank"
-                          >
-                            14004 Woodbine Avenue <br />
-                            Stouffville (Gormley),<br />
-                            Ontario, L0H 1G0 Canada
-                          </a>
-                        </p>
-                      </div>
-
-                      <!-- Second Column -->
-                      <div
-                        class="col-12 col-md-6 col-lg-6 contact-data__item grid-item"
-                      >
-                        <p
-                          style="text-decoration: underline"
-                          class="contact-data__title tagline-chapter animate-in-up"
-                        >
-                          Hours of Operation
-                        </p>
-                        <p class="contact-data__text small type-basic-160lh">
-                          <span class="animate-in-up"
-                            >Monday - Friday: 8:00 AM - 4:30 PM</span
-                          ><br />
-                          <span class="animate-in-up"
-                            >Saturday: Appointments only</span
-                          ><br />
-                          <span class="animate-in-up">Sunday: Closed</span>
-                        </p>
-                      </div>
-
-                      <!-- Third Column -->
-                      <div
-                        class="col-12 col-md-6 col-lg-6 contact-data__item grid-item"
-                      >
-                        <p
-                          style="text-decoration: underline"
-                          class="contact-data__title tagline-chapter animate-in-up"
-                        >
-                          Phone
-                        </p>
-                        <p class="contact-data__text small type-basic-160lh">
-                          <a
-                            class="link-small-160lh animate-in-up"
-                            href="tel:+16472877869"
-                            >+1 (647) 287-7869</a
-                          ><br />
-                          <a
-                            class="link-small-160lh animate-in-up"
-                            href="tel:+16475233623"
-                            >+1 (647)-523-3623</a
-                          >
-                        </p>
-                      </div>
-
-                      <!-- Fourth Column -->
-                      <div
-                        class="col-12 col-md-6 col-lg-6 contact-data__item grid-item"
-                      >
-                        <p
-                          style="text-decoration: underline"
-                          class="contact-data__title tagline-chapter animate-in-up"
-                        >
-                          Email
-                        </p>
-                        <p class="contact-data__text small type-basic-160lh">
-                          <a
-                            class="link-small-160lh animate-in-up"
-                            href="mailto:naturalstonetraders@gmail.com"
-                            >naturalstonetraders@gmail.com</a
-                          ><br />
-                          <a
-                            class="link-small-160lh animate-in-up"
-                            href="mailto:sales.nststone@gmail.com"
-                            >sales.nststone@gmail.com</a
-                          >
-                        </p>
-                      </div>
+          </div>
+          <!-- Inner Section Name End -->
+    
+          <!-- Inner Section Content Start -->
+          <div class="col-12 col-xl-8">
+            <div class="inner__content">
+              <div class="content__block grid-block">
+                <div class="container-fluid p-0 contact-data">
+                  <div class="row g-0 contact-data-wrapper">
+                    <!-- Location -->
+                    <div class="contact-data__item grid-item">
+                      <p class="contact-data__title tagline-chapter animate-in-up">Location</p>
+                      <p class="contact-data__text small type-basic-160lh">
+                        <a class="link-small-160lh animate-in-up" href="https://maps.app.goo.gl/g28hCHCGMMyEEqMU7" target="_blank">
+                          14004 Woodbine Avenue <br />Stouffville (Gormley),<br />Ontario, L0H 1G0 Canada
+                        </a>
+                      </p>
+                    </div>
+                    <!-- Hours of Operation -->
+                    <div class="contact-data__item grid-item">
+                      <p class="contact-data__title tagline-chapter animate-in-up">Hours of Operation</p>
+                      <p class="contact-data__text small type-basic-160lh">
+                        <span class="animate-in-up">Monday - Friday: 8:00 AM - 4:30 PM</span><br />
+                        <span class="animate-in-up">Saturday: Appointments only</span><br />
+                        <span class="animate-in-up">Sunday: Closed</span>
+                      </p>
+                    </div>
+                    <!-- Phone -->
+                    <div class="contact-data__item grid-item">
+                      <p class="contact-data__title tagline-chapter animate-in-up">Phone</p>
+                      <p class="contact-data__text small type-basic-160lh">
+                        <a class="link-small-160lh animate-in-up" href="tel:+16472877869">+1 (647) 287-7869</a><br />
+                        <a class="link-small-160lh animate-in-up" href="tel:+16475233623">+1 (647)-523-3623</a>
+                      </p>
+                    </div>
+                    <!-- Email -->
+                    <div class="contact-data__item grid-item">
+                      <p class="contact-data__title tagline-chapter animate-in-up">Email</p>
+                      <p class="contact-data__text small type-basic-160lh">
+                        <a class="link-small-160lh animate-in-up" href="mailto:naturalstonetraders@gmail.com">naturalstonetraders@gmail.com</a><br />
+                        <a class="link-small-160lh animate-in-up" href="mailto:sales.nststone@gmail.com">sales.nststone@gmail.com</a>
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- Inner Section Content End -->
-
-            <!-- Inner Section Aside Start -->
-            <div class="col-12 col-xl-2"></div>
-            <!-- Inner Section Aside End -->
           </div>
+          <!-- Inner Section Content End -->
+          <div class="col-12 col-xl-2"></div>
         </div>
-
-        <!-- Inner Section Off-canvas Content (Footer Marquee Block) Start -->
-
-        <!-- Inner Section Off-canvas Content (Footer Marquee Block) Start -->
       </div>
+    </div>
       <div
         style="
           display: flex;
