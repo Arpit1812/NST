@@ -370,6 +370,13 @@
                         <a class="link-small-160lh animate-in-up" href="mailto:sales.nststone@gmail.com">sales.nststone@gmail.com</a>
                       </p>
                     </div>
+                    <!-- Areas We Serve -->
+                    <div style="padding-top: 30px;" class="contact-data__item">
+                      <p class="contact-data__title tagline-chapter animate-in-up">
+                        Area we serve
+                      </p>
+                      <div class="contact-data__text small" id="areas-we-serve"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -429,6 +436,30 @@
 
     <!-- Inner Section - Contact - End -->
     <script>
+      const areasWeServe = [
+        "Ajax",
+        "Barrie",
+        "Bolton",
+        "Brampton",
+        "Caledon",
+        "Chatham",
+        "Hamilton",
+        "Kingston",
+        "Markham",
+        "Scarborough",
+        "Ottawa",
+        "Pickering",
+        "Oro Medonte",
+        "Sunderland",
+        "Stouffville",
+        "Richmond Hill",
+        "Toronto",
+        "Uxbridge",
+        "Whitby",
+        "Quebec",
+        "Montreal",
+      ];
+
       const contentData = [
         // Sandstone
         {
@@ -573,6 +604,21 @@
           slug: "urban-grey-marble",
         },
       ];
+      // Target the div with the id 'areas-we-serve'
+      const areasContainer = document.getElementById("areas-we-serve");
+
+      // Check if the container exists
+      if (areasContainer) {
+        // Iterate over the areas and create a span for each
+        areasWeServe.forEach((area) => {
+          const span = document.createElement("span");
+          span.className = "areas-serve"; // Add the desired class
+          span.textContent = area; // Set the text content
+          areasContainer.appendChild(span); // Append the span to the container
+        });
+      } else {
+        console.error("Div with id 'areas-we-serve' not found.");
+      }
 
       // Populate filter options dynamically
       function populateFilters() {

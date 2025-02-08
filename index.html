@@ -1832,6 +1832,13 @@
                             </a>
                           </p>
                         </div>
+                        <!-- Areas We Serve -->
+                    <div style="padding-top: 30px;" class="contact-data__item">
+                      <p class="contact-data__title tagline-chapter animate-in-up">
+                        Area we serve
+                      </p>
+                      <div class="contact-data__text small" id="areas-we-serve"></div>
+                    </div>
                       </div>
                     </div>
                   </div>
@@ -2219,6 +2226,48 @@
     <script src="js/gallery-init.js"></script>
     <script src="js/app.js"></script>
     <script src="js/script.js"></script>
+    <script>
+      // The array of areas we serve
+const areasWeServe = [
+        "Ajax",
+        "Barrie",
+        "Bolton",
+        "Brampton",
+        "Caledon",
+        "Chatham",
+        "Hamilton",
+        "Kingston",
+        "Markham",
+        "Scarborough",
+        "Ottawa",
+        "Pickering",
+        "Oro Medonte",
+        "Sunderland",
+        "Stouffville",
+        "Richmond Hill",
+        "Toronto",
+        "Uxbridge",
+        "Whitby",
+        "Quebec",
+        "Montreal",
+      ];
+
+      // Target the div with the id 'areas-we-serve'
+      const areasContainer = document.getElementById("areas-we-serve");
+
+      // Check if the container exists
+      if (areasContainer) {
+        // Iterate over the areas and create a span for each
+        areasWeServe.forEach((area) => {
+          const span = document.createElement("span");
+          span.className = "areas-serve"; // Add the desired class
+          span.textContent = area; // Set the text content
+          areasContainer.appendChild(span); // Append the span to the container
+        });
+      } else {
+        console.error("Div with id 'areas-we-serve' not found.");
+      }
+    </script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> -->
     <!-- <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/loaders/GLTFLoader.js"></script> -->
