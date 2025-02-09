@@ -9,6 +9,69 @@
     <link rel="stylesheet" type="text/css" href="css/main.css" />
   </head>
   <style>
+        body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+  }
+  .contact-form__container {
+    max-width: 600px;
+    max-height: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    font-size: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+  .contact-form input,
+.contact-form textarea {
+  width: 80%;  /* Adjust width (default is usually 100%) */
+  height: 35px; /* Reduce height */
+  font-size: 14px; /* Adjust font size */
+  padding: 5px; /* Reduce padding inside */
+}
+.contact-form textarea {
+  height: 120px; /* Reduce height for text areas */
+}
+
+
+  .contact-form__title {
+    text-align: center;
+    font-size: 50px;
+    color: #a17c30;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffffff;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #262626;
+    color: #ffffff;
+  }
+  .contact-form__submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #a17c30;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .contact-form__submit:hover {
+    background-color: #ac8e54;
+  }
         .contact-data-wrapper {
     display: flex;
     flex-direction: row; /* Aligns sections horizontally */
@@ -187,6 +250,41 @@
       class="inner contact inner-grid-bottom no-padding-bottom"
       style="z-index: 100; padding-top: 20px"
     >
+
+    <section id="contact" class="inner contact inner-grid-bottom no-padding-bottom" style=" position: relative; padding-top: 100px;">
+      <div class="contact-form__container">
+        <h2 class="contact-form__title">Dealership Inquiry</h2>
+        <form action="https://formspree.io/f/mzzdvyoy" method="POST" class="contact-form">
+          <div class="form-group">
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="Full Name" required placeholder="Enter your full name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Company Name</label>
+            <input type="text" id="company-name" name="company-name" required placeholder="Enter your Company Name" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email address" />
+          </div>
+          <div class="form-group">
+            <label for="location">Phone Number</label>
+            <input type="tel" id="Phone-Number" name="Phone-Number" required placeholder="Enter Phone Number" />
+          </div>
+          <div class="form-group">
+            <label for="location">Business Location</label>
+            <input type="text" id="location" name="Business-Location" required placeholder="Enter Business Location" />
+          </div>
+          <div class="form-group">
+            <button type="submit" class="contact-form__submit">Submit</button>
+          </div>
+          <p id="success-message" style="display: none; color: #a17c30; font-size: 18px; text-align: center;">
+            Thank you! Your form has been submitted successfully.
+          </p>      
+        </form>
+      </div>
+    </section>
+
     <div class="inner__wrapper">
       <div class="container-fluid p-0">
         <div class="row g-0">
@@ -291,6 +389,33 @@
       </div>
     </section>
     <script>
+      document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector(".contact-form");
+    const successMessage = document.getElementById("success-message");
+
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: { Accept: "application/json" },
+        });
+
+        if (response.ok) {
+          successMessage.style.display = "block"; // Show success message
+          form.reset(); // Clear the form
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      } catch (error) {
+        alert("Error submitting the form. Check your internet connection.");
+      }
+    });
+  });
             // The array of areas we serve
 const areasWeServe = [
         "Ajax",
