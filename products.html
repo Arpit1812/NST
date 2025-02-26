@@ -400,11 +400,13 @@
                       </p>
                     </div>
                     <!-- Areas We Serve -->
-                    <div style="padding-top: 30px;" class="contact-data__item">
-                      <p class="contact-data__title tagline-chapter animate-in-up">
-                        Area we serve
-                      </p>
-                      <div class="contact-data__text small" id="areas-we-serve"></div>
+                    <!-- Areas We Serve -->
+<div style="padding-top: 30px;" class="contact-data__item">
+  <p class="contact-data__title tagline-chapter animate-in-up">
+    Areas we serve
+  </p>
+  <div class="contact-data__text small" id="areas-we-serve"></div>
+</div>
                     </div>
                   </div>
                 </div>
@@ -514,45 +516,46 @@
       ];
 
             // The array of areas we serve
+// The array of areas we serve
 const areasWeServe = [
-        "Ajax",
-        "Barrie",
-        "Bolton",
-        "Brampton",
-        "Caledon",
-        "Chatham",
-        "Hamilton",
-        "Kingston",
-        "Markham",
-        "Scarborough",
-        "Ottawa",
-        "Pickering",
-        "Oro Medonte",
-        "Sunderland",
-        "Stouffville",
-        "Richmond Hill",
-        "Toronto",
-        "Uxbridge",
-        "Whitby",
-        "Quebec",
-        "Montreal",
-      ];
+  "Ajax",
+  "Barrie",
+  "Bolton",
+  "Brampton",
+  "Caledon",
+  "Chatham",
+  "Hamilton",
+  "Kingston",
+  "Markham",
+  "Scarborough",
+  "Ottawa",
+  "Pickering",
+  "Oro Medonte",
+  "Sunderland",
+  "Stouffville",
+  "Richmond Hill",
+  "Toronto",
+  "Uxbridge",
+  "Whitby",
+  "Quebec",
+  "Montreal",
+];
 
-      // Target the div with the id 'areas-we-serve'
-      const areasContainer = document.getElementById("areas-we-serve");
+// Target the div with the id 'areas-we-serve'
+const areasContainer = document.getElementById("areas-we-serve");
 
-      // Check if the container exists
-      if (areasContainer) {
-        // Iterate over the areas and create a span for each
-        areasWeServe.forEach((area) => {
-          const span = document.createElement("span");
-          span.className = "areas-serve"; // Add the desired class
-          span.textContent = area; // Set the text content
-          areasContainer.appendChild(span); // Append the span to the container
-        });
-      } else {
-        console.error("Div with id 'areas-we-serve' not found.");
-      }
+// Check if the container exists
+if (areasContainer) {
+  // Iterate over the areas and create a span for each
+  areasWeServe.forEach((area) => {
+    const span = document.createElement("span");
+    span.className = "area-item"; // Add a class for styling
+    span.textContent = area; // Set the text content
+    areasContainer.appendChild(span); // Append the span to the container
+  });
+} else {
+  console.error("Div with id 'areas-we-serve' not found.");
+}
 
       // Function to generate category cards dynamically
       function generateCategoryCards() {

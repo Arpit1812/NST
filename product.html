@@ -36,7 +36,38 @@
       align-items: center;
     }
   }
-  </style>
+  /* Table Styling */
+  .table-section {
+    margin: 20px 0;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #333;
+    color: #fff;
+  }
+
+  table th, table td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+
+  table th {
+    background-color: #444;
+    color: #fff;
+  }
+
+  table tr:nth-child(even) {
+    background-color: #555;
+  }
+
+  table tr:hover {
+    background-color: #666;
+  }
+</style>
   <body>
     <div id="mobileMenu" class="mobile-menu">
       <button
@@ -240,6 +271,7 @@
                       style="font-size: 20px; margin: 40px 0"
                       class="features-list"
                     >
+                    <!-- <div class="table-section"></div> -->
                       <li>
                         <i class="ph ph-check-circle"></i>
                         <strong>Premium Quality Materials:</strong>
@@ -248,6 +280,7 @@
                       </li>
                     </ul>
                   </div>
+                  <div class="table-section"></div>
                   <div style="margin: 50px 0 30px 0">
                     <h2
                       style="
@@ -345,7 +378,7 @@
                     <!-- Areas We Serve -->
                     <div style="padding-top: 30px;" class="contact-data__item">
                       <p class="contact-data__title tagline-chapter animate-in-up">
-                        Area we serve
+                        Areas we serve
                       </p>
                       <div class="contact-data__text small" id="areas-we-serve"></div>
                     </div>
@@ -414,33 +447,46 @@
 
     <!-- Inner Section - Contact - End -->
     <script>
-      const contentData = [
-        {
-          name: "pavers",
-          pageTitle: "Pavers | Natural Stone Co.",
-          title: "Pavers",
-          description:
-            "Transform outdoor spaces with the timeless charm and resilience of natural stone pavers. Our pavers are expertly crafted to combine durability with aesthetic appeal, making them the perfect choice for patios, driveways, walkways, and garden paths.",
-          features: [
-            "Handpicked stones that withstand heavy foot traffic and harsh weather conditions.",
-            "Available in various colors, textures, and patterns to complement any architectural style.",
-            "Naturally sourced materials, offering a sustainable paving option.",
-          ],
-          uses: [
-            "Driveways: Strong and stylish stones that withstand heavy traffic.",
-            "Pool Coping: Smooth edges for safety and aesthetics.",
-            "Outdoor Entertaining Areas: Create an inviting space for family and friends.",
-          ],
-          ctaText:
-            "Ready to transform your outdoors? Browse Our Pavers Collection and start your project today!",
-          ctaLink: "/pavers-coping.html",
-          images: [
-            "image/prod/paving/Autum_brown_steps_and_pavers-22_2048x2048.webp",
-            "image/prod/paving/DOVE_GREY_2-87_2048x2048.webp",
-            "image/prod/paving/LAVENDER_PAVERS-FRONT-13_2048x2048.webp",
-            "image/prod/paving/PAVERS_2-2_2048x2048.jpg",
-          ],
-        },
+     const contentData = [
+  {
+    name: "pavers",
+    pageTitle: "Pavers | Natural Stone Co.",
+    title: "Pavers",
+    description: `Transform outdoor spaces with the timeless charm and resilience of natural stone pavers. Our pavers are expertly crafted to combine durability with aesthetic appeal, making them the perfect choice for patios, driveways, walkways, and garden paths.`,
+    
+    features: [
+      "Handpicked stones that withstand heavy foot traffic and harsh weather conditions.",
+      "Available in various colors, textures, and patterns to complement any architectural style.",
+      "Naturally sourced materials, offering a sustainable paving option.",
+      "Our Natural Pavels are available in different sizes, please see the chart below:",
+    ],
+
+    table: {
+  headers: ["THICKNESS", "SIZES"],
+  rows: [
+    ["25, 30, & 50 mm (calibrated)", "36X24"],
+    ["", "24X24"],
+    ["", "24X18"],
+    ["", "24X12"],
+    ["", "12X12"],
+  ],
+},
+
+ uses: [
+      "Driveways: Strong and stylish stones that withstand heavy traffic.",
+      "Pool Coping: Smooth edges for safety and aesthetics.",
+      "Outdoor Entertaining Areas: Create an inviting space for family and friends.",
+    ],
+    ctaText:
+      "Ready to transform your outdoors? Browse Our Pavers Collection and start your project today!",
+    ctaLink: "/pavers-coping.html",
+    images: [
+      "image/prod/paving/Autum_brown_steps_and_pavers-22_2048x2048.webp",
+      "image/prod/paving/DOVE_GREY_2-87_2048x2048.webp",
+      "image/prod/paving/LAVENDER_PAVERS-FRONT-13_2048x2048.webp",
+      "image/prod/paving/PAVERS_2-2_2048x2048.jpg",
+    ],
+  },
         {
           name: "coping",
           pageTitle: "Coping | Natural Stone Co.",
@@ -452,7 +498,17 @@
             "Built to withstand moisture, UV rays, and extreme temperatures.",
             "Tailored to fit various shapes and dimensions.",
             "Eco-friendly materials that align with sustainable landscaping practices.",
+            "Please see the chart below for available sizes:",
           ],
+
+          table: {
+  headers: ["THICKNESS", "SIZES"],
+  rows: [
+    ["25mm (Edge Coping) 50 mm (calibrated)", "48x12 48x14 & 48x16"],
+    ["", "60x12 60x14 & 60x16"],
+    ["", "72x12 72x14 & 72x16"],
+  ],
+},
           uses: [
             "Driveways: Strong and stylish stones that withstand heavy traffic.",
             "Pool Coping: Smooth edges for safety and aesthetics.",
@@ -468,32 +524,51 @@
             "image/prod/coping/POOL_COPINGS-8_1728x.webp",
           ],
         },
-        {
-          name: "steps-curbs",
-          pageTitle: "Steps & Curbs | Natural Stone Co.",
-          title: "Steps & Curbs",
-          description:
-            "Seamlessly integrate functionality and design with our natural stone steps and curbs. These pieces are more than just practical – they add an architectural statement to any property.",
-          features: [
-            "Natural resistance to wear and tear, perfect for high-traffic areas.",
-            "Elegant, timeless designs that complement all architectural styles.",
-            "Enhanced property value with premium materials.",
-          ],
-          uses: [
-            "Residential: Elegant entrances and garden borders.",
-            "Commercial: Sophisticated curbing solutions for parking lots and pathways.",
-            "Public Spaces: Durable and beautiful options for parks and public projects.",
-          ],
-          ctaText:
-            "Enhance your pathways with precision-crafted steps and curbs. Contact Us for personalized recommendations!",
-          ctaLink: "/steps-curbs.html",
-          images: [
-            "image/prod/steps/BROWN_STEPS_2-53_2048x2048.webp",
-            "image/prod/steps/Horvath_design_build_landscapes_-_front_and_nack_landscaping-2010-49_2048x2048.webp",
-            "image/prod/steps/slate_grey_steps_and_pavers_3-16_2048x2048.webp",
-            "image/prod/steps/PICS_FOR_KOTA_BLACK_3-110_2048x2048.webp",
-          ],
-        },
+          {
+  name: "steps-curbs",
+  pageTitle: "Steps & Curbs | Natural Stone Co.",
+  title: "Steps & Curbs",
+  description:
+    "Seamlessly integrate functionality and design with our natural stone steps and curbs. These pieces are more than just practical – they add an architectural statement to any property.",
+  features: [
+    "Natural resistance to wear and tear, perfect for high-traffic areas.",
+    "Elegant, timeless designs that complement all architectural styles.",
+    "Enhanced property value with premium materials.",
+    "Our Steps and Curbs are available in different sizes, please see the chart below:",
+  ],
+  table: {
+    steps: {
+      headers: ["THICKNESS", "SIZES OF STEPS"],
+      rows: [
+        ["6 & 7 INCHES (calibrated)", "48X16"],
+        ["", "60X16"],
+        ["", "72X16"],
+        ["", "96X16"],
+        ["", "48X12 60X12 72X12 & 96X12"],
+      ],
+    },
+    curbs: {
+      headers: ["THICKNESS", "SIZES OF CURBS"],
+      rows: [
+        ["6 & 7 INCHES", "15, 30, & 47"],
+      ],
+    },
+  },
+  uses: [
+    "Residential: Elegant entrances and garden borders.",
+    "Commercial: Sophisticated curbing solutions for parking lots and pathways.",
+    "Public Spaces: Durable and beautiful options for parks and public projects.",
+  ],
+  ctaText:
+    "Enhance your pathways with precision-crafted steps and curbs. Contact Us for personalized recommendations!",
+  ctaLink: "/steps-curbs.html",
+  images: [
+    "image/prod/steps/BROWN_STEPS_2-53_2048x2048.webp",
+    "image/prod/steps/Horvath_design_build_landscapes_-_front_and_nack_landscaping-2010-49_2048x2048.webp",
+    "image/prod/steps/slate_grey_steps_and_pavers_3-16_2048x2048.webp",
+    "image/prod/steps/PICS_FOR_KOTA_BLACK_3-110_2048x2048.webp",
+  ],
+},
         {
           name: "walling-veneers",
           pageTitle: "Walling & Veneers | Natural Stone Co.",
@@ -505,6 +580,7 @@
             "A variety of textures, from rugged to smooth, to match your vision.",
             "Low-maintenance materials that retain their charm for years.",
           ],
+         
           uses: [
             "Interior Walls: Add rustic or modern charm to living rooms and offices.",
             "Exterior Cladding: Weather-resistant veneers for lasting beauty.",
@@ -529,7 +605,15 @@
             "Large format options for seamless installations.",
             "Robust materials that ensure long-lasting performance.",
             "Natural stone designs that add unique character to every project.",
+            "Our Pier Caps are available in the sizes below: (Slabs sold in 5, 6, 8 feet - Please call if you need a custom size)",
           ],
+          table: {
+  headers: ["THICKNESS", "SIZES"],
+  rows: [
+    ["2 & 3 INCHES (calibrated)", "24X24"],
+    ["", "30X30"],
+  ],
+},
           uses: [
             "Kitchen and Bathroom Slabs: Perfect for countertops with natural elegance.",
             "Pier Caps: Protect and enhance fence piers and columns.",
@@ -598,6 +682,17 @@
         "Quebec",
         "Montreal",
       ];
+     
+      document.addEventListener("DOMContentLoaded", function () {
+  const tableContainer = document.querySelector(".table-section");
+
+  console.log("Checking table container:", tableContainer); // Debugging log
+
+  if (!tableContainer) {
+    console.error("Error: .table-section not found in the document.");
+    return;
+  }
+});
 
       // Target the div with the id 'areas-we-serve'
       const areasContainer = document.getElementById("areas-we-serve");
@@ -637,6 +732,92 @@
               `<li><i style="margin-right:10px" class="ph ph-check-circle"></i>${feature}</li>`
           )
           .join("");
+          
+          //update table
+document.addEventListener("DOMContentLoaded", function () {
+  const tableContainer = document.querySelector(".table-section");
+
+  if (!tableContainer) {
+    console.error("Error: .table-section not found in the document.");
+    return;
+  }
+
+  // Get the current section from the URL query parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  const currentSection = urlParams.get("section"); // e.g., "steps-curbs"
+
+  if (!currentSection) {
+    console.error("Error: No section specified in the URL.");
+    return;
+  }
+
+  // Find the product that matches the current section
+  const product = contentData.find((item) => item.name === currentSection);
+
+  if (!product) {
+    console.error(`Error: No product found for section "${currentSection}".`);
+    return;
+  }
+
+  // Render tables only if the product has table data
+  if (product.table) {
+    // Check if the table property contains nested tables (e.g., steps and curbs)
+    if (product.table.headers && product.table.rows) {
+      // Case 1: Single table
+      renderTable(product.table, product.title);
+    } else {
+      // Case 2: Multiple tables (e.g., steps and curbs)
+      for (const [tableName, tableData] of Object.entries(product.table)) {
+        renderTable(tableData, tableName);
+      }
+    }
+  } else {
+    console.warn(`No table data found for section "${currentSection}".`);
+  }
+
+  // Helper function to render a single table
+  function renderTable(tableData, tableTitle) {
+    const tableWrapper = document.createElement("div");
+    tableWrapper.classList.add("table-wrapper");
+
+    // Add title for the table
+    const title = document.createElement("h3");
+    title.textContent = tableTitle.toUpperCase(); // e.g., "STEPS" or "CURBS"
+    title.classList.add("table-title");
+    tableWrapper.appendChild(title);
+
+    // Create Table
+    const table = document.createElement("table");
+    table.classList.add("product-table");
+
+    // Create Table Header
+    const thead = document.createElement("thead");
+    const headerRow = document.createElement("tr");
+    tableData.headers.forEach((header) => {
+      const th = document.createElement("th");
+      th.textContent = header;
+      headerRow.appendChild(th);
+    });
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    // Create Table Body
+    const tbody = document.createElement("tbody");
+    tableData.rows.forEach((row) => {
+      const tr = document.createElement("tr");
+      row.forEach((cell) => {
+        const td = document.createElement("td");
+        td.textContent = cell;
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+
+    tableWrapper.appendChild(table);
+    tableContainer.appendChild(tableWrapper);
+  }
+});
 
         // Update uses
         const usesList = document.querySelector(".uses-list");
@@ -681,5 +862,11 @@
 
     <script src="../js/libs.min.js"></script>
     <script src="../js/app.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("Script is running inside HTML!");
+      });
+    </script>
+    
   </body>
 </html>
