@@ -46,6 +46,53 @@
       content="black-translucent"
     />
     <!-- Custom Browser Color End -->
+    <style>
+      .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .btn-line-circle-icon {
+    display: inline-flex;
+    align-items: center;
+    background: #a17c30;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+  }
+
+  .btn-line-circle-icon:hover {
+    background: #a17c30;
+      }
+
+    </style>
   </head>
   <!--Start of Tawk.to Script-->
   <script type="text/javascript">
@@ -135,6 +182,24 @@
       </div>
     </div>
     <!-- Loader End -->
+
+    <!--PopUp Starts-->
+    <div id="cataloguePopup" class="popup-overlay" style="display: none;">
+  <div class="popup-content">
+    <button class="close-btn" onclick="closePopup()">✖</button>
+    <a
+      target="_blank"
+      href="https://publuu.com/flip-book/73791/1180500"
+      class="btn btn-line-circle-icon"
+    >
+      <span class="btn-caption">Catalogue</span>
+      <span class="circle hover-circle">
+        <em></em>
+        <i class="ph ph-arrow-right"></i>
+      </span>
+    </a>
+  </div>
+</div>
 
     <!-- Header Start -->
     <header
@@ -574,10 +639,10 @@
                         class="gallery__btn animate-in-up"
                       >
                         <a
-                          href="/gallery.html"
+                          href="https://publuu.com/flip-book/73791/1180500"
                           class="btn btn-line-circle-icon"
                         >
-                          <span class="btn-caption">Gallery</span>
+                          <span class="btn-caption">Catalogue</span>
                           <span class="circle hover-circle">
                             <em></em>
                             <i class="ph ph-arrow-right"></i>
@@ -2255,6 +2320,16 @@ const areasWeServe = [
       // Target the div with the id 'areas-we-serve'
       const areasContainer = document.getElementById("areas-we-serve");
 
+      document.addEventListener("DOMContentLoaded", function () {
+    // Show the popup after 3-4 seconds (3500ms)
+    setTimeout(function () {
+      document.getElementById("cataloguePopup").style.display = "flex";
+    }, 3500);
+  });
+
+  function closePopup() {
+    document.getElementById("cataloguePopup").style.display = "none";
+  }
       // Check if the container exists
       if (areasContainer) {
         // Iterate over the areas and create a span for each
