@@ -93,6 +93,25 @@ content="black-translucent" <!-- Translucent black status bar for Apple devices 
   margin-bottom: 20px;
 }
 
+.content__block.grid-block {
+  background-color: rgba(0, 0, 0, 0.286) !important; /* Full black background */
+  width: 100%;
+  border-radius: 20px;
+  /* min-height: 100vh; Ensure it covers the full viewport height */
+  margin-top: 20px;
+  padding: 50px 0; /* Add some spacing around content */
+}
+
+.menu {
+  background-color: rgba(0, 0, 0, 0.507) !important;
+  border-radius: 10px;
+}
+
+.mobile-menu {
+  background-color: rgba(0, 0, 0, 0.497) !important;
+}
+ 
+
 .btn-line-circle-icon {
   display: inline-flex;
   align-items: center;
@@ -234,12 +253,12 @@ content="black-translucent" <!-- Translucent black status bar for Apple devices 
               <span class="mobile-menu__caption">Products</span>
             </a>
           </li>
-          <!-- <li class="mobile-menu__item">
-            <a class="mobile-menu__link btn" href="/workflow.html">
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link btn" href="/blog.html">
               <i class="ph ph-article"></i>
-              <span class="mobile-menu__caption">Workflow</span>
+              <span class="mobile-menu__caption">Blog</span>
             </a>
-          </li> -->
+          </li>
           <li class="mobile-menu__item">
             <a class="mobile-menu__link btn" href="/categories.html">
               <i class="ph ph-user"></i>
@@ -265,48 +284,9 @@ content="black-translucent" <!-- Translucent black status bar for Apple devices 
     <button id="mobileMenuToggle" class="mobile-menu-toggle-btn d-md-none">
       <i class="ph ph-text-indent"></i>
     </button>
-
-    <!-- Loader Start -->
-    <div style="opacity: 0" id="loader" class="loader">
-      <div class="loader__wrapper">
-        <div class="loader__content">
-          <div class="loader__count">
-            <span class="count__text">0</span>
-            <span class="count__percent">%</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Loader End -->
-
-    <!-- PopUp Starts -->
-<div id="cataloguePopup" class="popup-overlay">
-  <div class="popup-content">
-    <button class="close-btn" onclick="closePopup()">✖</button>
-    <h2 class="popup-title">Explore Our Catalogue</h2>
-    <p class="popup-description">
-      Discover our premium collection of natural stones and products.
-    </p>
-    <a
-      target="_blank"
-      href="https://publuu.com/flip-book/73791/1180500"
-      class="btn btn-line-circle-icon popup-btn"
-    >
-      <span class="btn-caption">View Catalogue</span>
-      <span class="circle hover-circle">
-        <em></em>
-        <i class="ph ph-arrow-right"></i>
-      </span>
-    </a>
-  </div>
-</div>
-
+    
     <!-- Header Start -->
-    <header
-      id="header"
-      class="header d-flex justify-content-center loading__fade"
-    >
-      <!-- Navigation Menu Start -->
+    <header id="header" class="header d-flex justify-content-center loading__fade">
       <div class="header__navigation d-flex justify-content-start">
         <nav id="menu" class="menu">
           <ul class="menu__list d-flex justify-content-start">
@@ -328,9 +308,14 @@ content="black-translucent" <!-- Translucent black status bar for Apple devices 
                 <i class="ph ph-sticker"></i>
               </a>
             </li>
-
             <li class="menu__item">
-              <a class="menu__link btn" href="categories.html">
+              <a class="menu__link btn" href="/blog.html">
+                <span class="menu__caption">Blog</span>
+                <i class="ph ph-article"></i>
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link btn" href="/categories.html">
                 <span class="menu__caption">Categories</span>
                 <i class="ph ph-user"></i>
               </a>
@@ -342,7 +327,7 @@ content="black-translucent" <!-- Translucent black status bar for Apple devices 
               </a>
             </li>
             <li class="menu__item">
-              <a class="menu__link btn" href="index.html#contact">
+              <a class="menu__link btn" href="/index.html#contact">
                 <span class="menu__caption">Contact</span>
                 <i class="ph ph-envelope"></i>
               </a>
@@ -350,8 +335,8 @@ content="black-translucent" <!-- Translucent black status bar for Apple devices 
           </ul>
         </nav>
       </div>
-      <!-- Navigation Menu End -->
     </header>
+    
     <!-- Header End -->
 
   <!-- Fixed Logo Start -->
@@ -1890,7 +1875,7 @@ content="black-translucent" <!-- Translucent black status bar for Apple devices 
                   <!-- Content Block - H2 Section Title End -->
 
                   <!-- Content Block - Contact Form Start -->
-                  <div class="content__block grid-block pre-grid-items">
+                  <div class="content__block-2 grid-block pre-grid-items">
                     <div class="form-container">
                       <!-- Reply Messages Start -->
 
