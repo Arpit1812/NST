@@ -7,95 +7,142 @@
     <link rel="stylesheet" href="css/main.css" />
     <style>
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #181818;
-            color: #ffffff;
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background-color: #181818; /* Default dark theme background */
+          color: #ffffff; /* Default dark theme text color */
         }
-
+      
+        /* Light Theme Styles */
+        body[data-theme="light"] {
+          background-color: #ffffff; /* White background for light theme */
+          color: #000000; /* Black text for light theme */
+        }
+      
         .dashboard {
-            display: flex;
+          display: flex;
         }
-
+      
         .sidebar {
-            width: 260px;
-            height: 100vh;
-            padding: 20px;
-            background-color: #232323;
-            border-right: 2px solid #333;
-            box-shadow: 3px 0 5px rgba(0, 0, 0, 0.3);
-            display: flex;
-            flex-direction: column;
+          width: 260px;
+          height: 100vh;
+          padding: 20px;
+          background-color: #232323; /* Dark theme sidebar background */
+          border-right: 2px solid #333;
+          box-shadow: 3px 0 5px rgba(0, 0, 0, 0.3);
+          display: flex;
+          flex-direction: column;
         }
-
+      
+        /* Light Theme Sidebar */
+        body[data-theme="light"] .sidebar {
+          background-color: #ffffff; /* White background for sidebar in light theme */
+          border-right: 2px solid #ddd; /* Lighter border for light theme */
+        }
+      
         .sidebar h2 {
-            margin-top: 0;
-            font-size: 1.4em;
-            color: #f5f5f5;
+          margin-top: 0;
+          font-size: 1.4em;
+          color: #f5f5f5; /* Light text for dark theme */
         }
-
+      
+        /* Light Theme Sidebar Heading */
+        body[data-theme="light"] .sidebar h2 {
+          color: #333; /* Dark text for light theme */
+        }
+      
         #texture-list {
-            flex-grow: 1;
-            overflow-y: auto;
-            padding-right: 5px;
+          flex-grow: 1;
+          overflow-y: auto;
+          padding-right: 5px;
         }
-
+      
         .texture-option {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            margin-bottom: 15px;
-            padding: 8px;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          margin-bottom: 15px;
+          padding: 8px;
+          border-radius: 8px;
+          transition: background-color 0.3s ease;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+          background-color: #333; /* Dark theme texture option background */
+          color: #ffffff; /* White text for dark theme */
         }
-
+      
+        /* Light Theme Texture Option */
+        body[data-theme="light"] .texture-option {
+          background-color: #f5f5f5; /* Light gray background for texture option in light theme */
+          border: 1px solid #ddd; /* Light border for better visibility */
+          color: #000000; /* Black text for light theme */
+        }
+      
         .texture-option:hover {
-            background-color: #444444;
+          background-color: #444444; /* Dark theme hover background */
         }
-
+      
+        /* Light Theme Texture Option Hover */
+        body[data-theme="light"] .texture-option:hover {
+          background-color: #e0e0e0; /* Light grey hover background for light theme */
+        }
+      
         .texture-option img {
-            width: 55px;
-            height: 55px;
-            margin-right: 12px;
-            border-radius: 6px;
-            border: 2px solid #555;
+          width: 55px;
+          height: 55px;
+          margin-right: 12px;
+          border-radius: 6px;
+          border: 2px solid #555; /* Dark theme image border */
         }
-
+      
+        /* Light Theme Image Border */
+        body[data-theme="light"] .texture-option img {
+          border: 2px solid #ccc; /* Lighter border for light theme */
+        }
+      
         main {
-            flex-grow: 1;
-            height: 100vh;
-            position: relative;
+          flex-grow: 1;
+          height: 100vh;
+          position: relative;
         }
-
+      
         .control-group {
-            margin-top: 20px;
+          margin-top: 20px;
         }
-
+      
         label {
-            display: block;
-            margin-bottom: 5px;
-            color: #d3d3d3;
+          display: block;
+          margin-bottom: 5px;
+          color: #d3d3d3; /* Light text for dark theme */
         }
-
+      
+        /* Light Theme Label Text */
+        body[data-theme="light"] label {
+          color: #333; /* Dark text for light theme */
+        }
+      
         input[type="range"],
         input[type="color"] {
-            width: 100%;
-            margin-bottom: 15px;
-            outline: none;
+          width: 100%;
+          margin-bottom: 15px;
+          outline: none;
         }
-
+      
         input[type="color"] {
-            padding: 5px;
-            background-color: #333;
-            border: none;
-            border-radius: 4px;
-            height: 40px;
+          padding: 5px;
+          background-color: #333; /* Dark theme color picker background */
+          border: none;
+          border-radius: 4px;
+          height: 40px;
         }
-    </style>
+      
+        /* Light Theme Color Picker */
+        body[data-theme="light"] input[type="color"] {
+          background-color: #e0e0e0; /* Light gray background for color picker in light theme */
+        }
+      </style>
 </head>
 <body>
+    <button id="color-switcher">Switch Theme</button>
     <div class="dashboard">
         <aside class="sidebar">
             <h2>Textures</h2>
@@ -138,77 +185,26 @@
     <script src="https://cdn.jsdelivr.net/npm/three@0.135.0/examples/js/controls/OrbitControls.js"></script>
 
     <script>
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(
-            75,
-            (window.innerWidth - 260) / window.innerHeight,
-            0.1,
-            1000
-        );
-        camera.position.set(2, 2, 5);
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
-        renderer.setSize(window.innerWidth - 260, window.innerHeight);
-        renderer.setClearColor(0x181818);
-        renderer.shadowMap.enabled = true;
-        document.getElementById("simulation-area").appendChild(renderer.domElement);
-
-        // Create a single material cuboid
-        const textureLoader = new THREE.TextureLoader();
-        const cuboidMaterial = new THREE.MeshStandardMaterial({
-            roughness: 0.8, // Higher roughness for a more stone-like appearance
-            metalness: 0.1 // Lower metalness for stone
-        });
-        const cuboidGeometry = new THREE.BoxGeometry(3, 1, 3);
-        const cuboid = new THREE.Mesh(cuboidGeometry, cuboidMaterial);
-        cuboid.castShadow = true;
-        cuboid.receiveShadow = true; // Ensure the cuboid receives shadows
-        scene.add(cuboid);
-
-        // Ambient light
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
-        scene.add(ambientLight);
-
-        // Directional light
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-        directionalLight.position.set(5, 10, 5);
-        directionalLight.castShadow = true;
-        directionalLight.shadow.mapSize.width = 1024; // Increase shadow quality
-        directionalLight.shadow.mapSize.height = 1024; // Increase shadow quality
-        scene.add(directionalLight);
-
-        // Controls
-        const controls = new THREE.OrbitControls(camera, renderer.domElement);
-        controls.update();
-
-        // Light intensity and color controls
-        document.getElementById("light-intensity").addEventListener("input", (event) => {
-            directionalLight.intensity = event.target.value;
-        });
-
-        document.getElementById("light-color").addEventListener("input", (event) => {
-            directionalLight.color.set(event.target.value);
-        });
-
-        // Texture application
-        const textureOptions = document.querySelectorAll(".texture-option");
-        textureOptions.forEach((option) => {
-            option.addEventListener("click", () => {
-                const texturePath = option.getAttribute("data-texture");
-                textureLoader.load(texturePath, (texture) => {
-                    cuboidMaterial.map = texture;
-                    cuboidMaterial.roughness = 0.8; // Maintain roughness for realism
-                    cuboidMaterial.metalness = 0.1; // Maintain metalness for realism
-                    cuboidMaterial.needsUpdate = true;
-                });
-            });
-        });
-
-        // Animation loop
-        function animate() {
-            requestAnimationFrame(animate);
-            renderer.render(scene, camera);
+        // Theme Switching Logic
+        function switchTheme(theme) {
+          document.body.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme);
         }
-        animate();
+
+        function initializeTheme() {
+          const savedTheme = localStorage.getItem("theme") || "dark";
+          document.body.setAttribute("data-theme", savedTheme);
+        }
+
+        document.getElementById("color-switcher").addEventListener("click", () => {
+          const currentTheme = document.body.getAttribute("data-theme");
+          const newTheme = currentTheme === "dark" ? "light" : "dark";
+          switchTheme(newTheme);
+        });
+
+        initializeTheme();
+
+        // Rest of your JavaScript code...
     </script>
 </body>
 </html>

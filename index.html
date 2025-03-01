@@ -19,6 +19,7 @@
     <!-- Template Favicon & Icons Start -->
     <link rel="icon" href="image/newlogo.png" sizes="any" />
     <!-- Template Favicon & Icons End -->
+     <!-- Template Favicon & Icons Start -->
 
     <!-- Facebook Metadata Start -->
     <!-- Facebook Metadata End -->
@@ -29,23 +30,30 @@
     <!-- Template Styles End -->
 
     <!-- Custom Browser Color Start -->
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: light)"
-      content="#BABEC8"
-    />
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: dark)"
-      content="#141414"
-    />
-    <meta name="msapplication-navbutton-color" content="#141414" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <!-- Custom Browser Color End -->
+<!-- Light Theme Color -->
+<meta
+name="theme-color"
+media="(prefers-color-scheme: light)"
+content="#ffffff" <!-- White background for light theme -->
+/>
+
+<!-- Dark Theme Color -->
+<meta
+name="theme-color"
+media="(prefers-color-scheme: dark)"
+content="#141414" <!-- Dark background for dark theme -->
+/>
+
+<!-- Microsoft Edge and Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#141414" /> <!-- Dark theme color for Edge -->
+
+<!-- Apple Mobile Web App -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta
+name="apple-mobile-web-app-status-bar-style"
+content="black-translucent" <!-- Translucent black status bar for Apple devices -->
+/>
+<!-- Custom Browser Color End -->
     <style>
     .popup-overlay {
   position: fixed;
@@ -173,7 +181,33 @@
     opacity: 1;
   }
 }
+/* Logo Container */
+/* .logo {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+/* Logo Link */
+.logo__link {
+  display: inline-block;
+  width: auto;
+  height: auto;
+}
+
+/* Logo Image */
+.logo-img {
+  width: 105%; /* Increase width by 5% */
+  height: 105%; /* Increase height by 5% */
+  max-width: 105%; /* Ensure the image does not exceed its container */
+  display: block;
+} */
     </style>
+    
   </head>
   <!--Start of Tawk.to Script-->
   <script type="text/javascript">
@@ -344,16 +378,13 @@
     
     <!-- Header End -->
 
-    <!-- Fixed Logo Start -->
-    <div class="logo loading__fade">
-      <a href="#home" class="logo__link">
-        <!-- logo icon -->
-        <img class="logo-img" src="image/newlogo.png" alt="" />
-        <!-- logo text -->
-        <!-- <span class="logo-text">NsT*</span> -->
-      </a>
-    </div>
-    <!-- Fixed Logo End -->
+  <!-- Fixed Logo Start -->
+<div class="logo loading__fade" style="display: inline-block; width: auto; height: auto;">
+  <a href="#home" class="logo__link" style="display: inline-block; width: auto; height: auto;">
+    <img class="logo-img" src="image/newlogo.png" alt="" style="width: 300px; height: auto; display: block;" />
+  </a>
+</div>
+<!-- Fixed Logo End -->
 
     <!-- Fixed Color Switch Start -->
     <div class="color loading__fade">
@@ -640,26 +671,27 @@
                         </figure>
                         <!-- portfolio gallery single item -->
                         <figure
-                          class="col-12 col-md-6 gallery__item grid-item animate-card-2"
-                          itemprop="associatedMedia"
-                          itemscope
-                          itemtype="http://schema.org/ImageObject"
-                        >
-                          <a
-                            href="image/back_yard_patio_3_lavender-84_2048x2048.webp"
-                            data-image="image/back_yard_patio_3_lavender-84_2048x2048.webp"
-                            class="gallery__link"
-                            itemprop="contentUrl"
-                            data-size="1400x1400"
-                          >
-                            <img
-                              src="image/back_yard_patio_3_lavender-84_2048x2048.webp"
-                              class="gallery__image"
-                              itemprop="thumbnail"
-                              alt="Image description"
-                            />
-                          </a>
-                        </figure>
+  class="col-12 col-md-6 gallery__item grid-item animate-card-2"
+  itemprop="associatedMedia"
+  itemscope
+  itemtype="http://schema.org/ImageObject"
+>
+  <a
+    href="image/Urban Grey 1 (1).webp"
+    data-image="image/Urban Grey 1 (1).webp"
+    class="gallery__link"
+    itemprop="contentUrl"
+    data-size="1400x1400"
+  >
+    <img
+      src="image/Urban Grey 1 (1).webp"
+      class="gallery__image"
+      itemprop="thumbnail"
+      alt="Urban Grey 1"
+    />
+  </a>
+</figure>
+
                         <!-- portfolio gallery single item -->
                         <figure
                           class="col-12 col-md-6 gallery__item grid-item animate-card-2"
