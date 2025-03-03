@@ -1893,7 +1893,7 @@ content="black-translucent" <!-- Translucent black status bar for Apple devices 
               </div>
               <!-- Inner Section Name End -->
 
-              <!-- Content Block - Contact Data Start -->
+             <!-- Content Block - Contact Data Start -->
 <div class="content__block grid-block">
   <div class="container-fluid p-0 contact-data">
     <!-- Footer Background Box -->
@@ -1901,9 +1901,7 @@ content="black-translucent" <!-- Translucent black status bar for Apple devices 
       <div class="row g-0 d-flex justify-content-between text-center">
         <!-- Location -->
         <div class="col-md-3 col-12 contact-data__item grid-item">
-          <p class="contact-data__title tagline-chapter">
-            Location
-          </p>
+          <p class="contact-data__title tagline-chapter">Location</p>
           <p class="contact-data__text type-basic-160lh">
             <a class="link-small-160lh" href="https://maps.app.goo.gl/g28hCHCGMMyEEqMU7" target="_blank">
               14004 Woodbine Avenue <br />
@@ -1915,9 +1913,7 @@ content="black-translucent" <!-- Translucent black status bar for Apple devices 
 
         <!-- Hours of Operation -->
         <div class="col-md-3 col-12 contact-data__item grid-item">
-          <p class="contact-data__title tagline-chapter">
-            Hours of Operation
-          </p>
+          <p class="contact-data__title tagline-chapter">Hours of Operation</p>
           <p class="contact-data__text type-basic-160lh">
             <span>Monday - Friday: 8:00 AM - 4:30 PM</span><br />
             <span>Saturday: Appointments only</span><br />
@@ -1927,9 +1923,7 @@ content="black-translucent" <!-- Translucent black status bar for Apple devices 
 
         <!-- Phone -->
         <div class="col-md-3 col-12 contact-data__item grid-item">
-          <p class="contact-data__title tagline-chapter">
-            Phone
-          </p>
+          <p class="contact-data__title tagline-chapter">Phone</p>
           <p class="contact-data__text type-basic-160lh">
             <a class="link-small-160lh" href="tel:+16472877869">+1 (647) 287-7869</a><br />
             <a class="link-small-160lh" href="tel:+16475233623">+1 (647)-523-3623</a>
@@ -1938,25 +1932,17 @@ content="black-translucent" <!-- Translucent black status bar for Apple devices 
 
         <!-- Email -->
         <div class="col-md-3 col-12 contact-data__item grid-item">
-          <p class="contact-data__title tagline-chapter">
-            Email
-          </p>
+          <p class="contact-data__title tagline-chapter">Email</p>
           <p class="contact-data__text type-basic-160lh">
-            <a class="link-small-160lh" href="mailto:naturalstonetraders@gmail.com">
-              naturalstonetraders@gmail.com
-            </a><br />
-            <a class="link-small-160lh" href="mailto:sales.nststone@gmail.com">
-              sales.nststone@gmail.com
-            </a>
+            <a class="link-small-160lh" href="mailto:naturalstonetraders@gmail.com">naturalstonetraders@gmail.com</a><br />
+            <a class="link-small-160lh" href="mailto:sales.nststone@gmail.com">sales.nststone@gmail.com</a>
           </p>
         </div>
       </div>
 
       <!-- Areas We Serve -->
       <div class="contact-data__item text-center" style="padding-top: 30px;">
-        <p class="contact-data__title tagline-chapter">
-          Area we serve
-        </p>
+        <p class="contact-data__title tagline-chapter">Area we serve</p>
         <div class="contact-data__text small" id="areas-we-serve"></div>
       </div>
     </div>
@@ -1964,22 +1950,67 @@ content="black-translucent" <!-- Translucent black status bar for Apple devices 
 </div>
 <!-- Content Block - Contact Data End -->
 
-<!-- CSS for Footer Background Box -->
+<!-- CSS for Auto Dark/Light Theme -->
 <style>
+  /* Default Light Theme */
+  :root {
+  --bg-color: #f9f9f9;
+  --text-color: #f3eeee; /* Dark gray instead of black */
+  --secondary-text-color: #f8f7f7;
+  --link-color: #0056b3;
+  --link-hover-color: #ff9800;
+  --box-shadow: rgba(0, 0, 0, 0.1);
+}
+/* Dark Theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --secondary-text-color: #bbb;
+    --link-color: #4da6ff;
+    --link-hover-color: #ffcc00;
+    --box-shadow: rgba(255, 255, 255, 0.1);
+    --area-we-serve-text: #fff; /* Keeping white text in dark theme */
+  }
+}
+
+
   .footer-bg-box {
     width: 100%;
     max-width: 90%;
     margin: 0 auto;
-    background-color: #f5f5f5; /* Change as needed */
+    background-color: var(--bg-color);
+    color: var(--text-color);
     padding: 30px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0px 4px 10px var(--box-shadow);
   }
 
   .contact-data__item {
     padding: 20px;
+  }
+
+  .contact-data__title {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  .contact-data__text {
+    font-size: 1.5rem;
+    color: var(--secondary-text-color);
+  }
+
+  .link-small-160lh {
+    color: var(--link-color);
+    text-decoration: none;
+  }
+
+  .link-small-160lh:hover {
+    color: var(--link-hover-color);
   }
 
   @media (max-width: 768px) {
@@ -1988,7 +2019,20 @@ content="black-translucent" <!-- Translucent black status bar for Apple devices 
       padding: 20px;
     }
   }
+  /* Force 'Area we serve' text to white in light mode
+#areas-we-serve {
+  color: #fff !important;
+}
+
+/* Ensure it remains white in dark mode */
+/* @media (prefers-color-scheme: dark) {
+  #areas-we-serve {
+    color: #fff !important;
+  }
+} */ 
+
 </style>
+<!-- Content Block - Contact Data End -->
 
               <!-- Inner Section Aside Start -->
               <div class="col-12 col-xl-2"></div>

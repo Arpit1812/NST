@@ -68,8 +68,8 @@
   --_animbezier: cubic-bezier(0.23, 0.65, 0.74, 1.09);
   /* light color scheme */
   /* --base--light: #fff; */
-  --base--light: #babec8;
-  --base-rgb--light: 186, 190, 200;
+  --base--light: #ffffff;
+  --base-rgb--light: 255, 255, 255;
   --base-shade--light: #989ba3;
   --base-tint--light: #d8dde7;
   --stroke-controls--light: #2c2e34;
