@@ -4112,10 +4112,8 @@ form textarea:required:valid {
 }
 
 .logo {
-  max-width: 120px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
+  max-width: 160px; /* Increased max-width for larger logo */
+  padding: 0.5rem; /* Added padding for better spacing */
   display: flex;
   position: fixed;
   top: 2rem;
@@ -4123,47 +4121,46 @@ form textarea:required:valid {
   overflow: hidden;
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
-  -moz-border-radius: var(--_radius-s);
   border-radius: var(--_radius-s);
   z-index: 100;
 }
+
 @media only screen and (min-width: 768px) {
   .logo {
     top: 3rem;
     left: 5rem;
+    max-width: 180px; /* Slightly larger for bigger screens */
   }
 }
 
 .logo__link {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
+
 .logo__link svg {
   width: auto;
-  height: 4rem;
+  height: 5rem; /* Increased height for larger logo */
+  max-height: 100%; /* Ensures it doesn't overflow */
 }
+
 .logo__link span {
-  display: -webkit-inline-box;
-  display: -moz-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  padding-left: 1.4rem;
+  padding-left: 1.6rem;
   padding-right: 1rem;
+  font-size: 1.2rem; /* Adjusted font size for balance */
 }
+
 @media only screen and (min-width: 1400px) {
   .logo__link svg {
-    height: 5rem;
+    height: 6rem; /* Increased size for ultra-wide screens */
   }
   .logo__link span {
-    padding-left: 1.6rem;
+    padding-left: 1.8rem;
+    font-size: 1.4rem; /* Slightly larger text for big screens */
   }
 }
+
 
 .color {
   position: fixed;
@@ -7118,7 +7115,7 @@ form textarea:required:valid {
   display: none;
 }
 
-#back-button{
+#back-button {
   font-size: 24px;
   height: 50px;
   width: 50px;
@@ -7143,18 +7140,20 @@ form textarea:required:valid {
   width: 250px;
   height: 100%;
   padding-top: 50px;
-  background-color: #111;
+  background-color: rgba(0, 0, 0, 1); /* Fully opaque black for light theme */
   z-index: 1000;
   overflow-y: auto; 
-  transition: left 0.3s ease-in-out; /* Animate 'left' property */
+  transition: left 0.3s ease-in-out;
 }
 
 .mobile-menu.open {
   left: 0;
 }
-.mobile-menu__caption{
+
+.mobile-menu__caption {
   color: white;
 }
+
 .mobile-menu__close-btn {
   font-size: 24px;
   background: none;
@@ -7192,14 +7191,26 @@ form textarea:required:valid {
   background-color: #575757;
 }
 
+/* Dark Mode - Make Menu Background White & Text Black */
+@media (prefers-color-scheme: dark) {
+  .mobile-menu {
+    background-color: rgba(255, 255, 255, 1); /* Fully opaque white for dark theme */
+  }
+  .mobile-menu__link,
+  .mobile-menu__caption,
+  .mobile-menu__close-btn {
+    color: black;
+  }
+}
+
 /* Media Query for Mobile */
 @media (max-width: 1200px) {
   .mobile-menu-toggle-btn {
-    display: block; /* Show on small screens */
+    display: block;
   }
 
   .mobile-menu {
-    display: block; /* Ensure menu is active in DOM */
+    display: block;
   }
 }
 
