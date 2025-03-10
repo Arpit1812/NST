@@ -490,9 +490,35 @@ content="black-translucent" <!-- Translucent black status bar for Apple devices 
                     <div class="row g-0">
                       <div class="col-12">
                         <!-- change the background image in the main.css file - .main-image-1 -->
-                        <div
-                          class="divider divider-image main-image-1 animate-in-up"
-                        ></div>
+                        <div class="image-slider">
+                          <div class="slider-container">
+                            <div class="slider">
+                              <img src="image/Antique Black copings.jpg" alt="Slide 1">
+                              <img src="image/Antique Black pavers sealed.jpg" alt="Slide 2">
+                              <img src="image/Antique Black rebated L shaped coping on a filler.jpg" alt="Slide 3">
+                              <img src="image/Antique Black steps and coping.webp" alt="Slide 4">
+                              <img src="image/Antique Black.png" alt="Slide 5">
+                              <img src="image/Autumn Brown_Bronte pavers & curbs.jpg" alt="Slide 6">
+                              <img src="image/Black big pebbles.jpg" alt="Slide 7">
+                              <img src="image/Black chittor walling.jpg" alt="Slide 8">
+                              <img src="image/Black Pebbles, Westcoast Veneers, Antique Black Rebated Coping as Sill.jpg" alt="Slide 9">
+                              <img src="image/Black sills.jpg" alt="Slide 10">
+                              <img src="image/Bronte_Autumn Brown pavers.jpg" alt="Slide 11">
+                              <img src="image/Bronte_Autumn Brown steps and pavers.jpg" alt="Slide 12">
+                              <img src="image/Canary Rundle Pavers, Slate grey step, lavender pier caps.jpg" alt="Slide 13">
+                              <img src="image/Cobbles Dark Ebony eco friendly_.jpg" alt="Slide 14">
+                              <img src="image/cobbles.png" alt="Slide 15">
+                              <img src="image/Copy of Slate Grey Curbs Slate & Dove pavers.jpg" alt="Slide 16">
+                              <img src="image/Crystal Bianco risers and Pristine White coping.jpg" alt="Slide 17">
+                              <img src="image/Dark Ebony coping & pavers.jpg" alt="Slide 18">
+                              <img src="image/Dark Ebony copings sealed.jpg" alt="Slide 19">
+                              <img src="image/Dove grey BBQ Slab.jpg" alt="Slide 20">
+                            </div>
+                          </div>
+                          <button class="prev" onclick="prevSlide()">&#10094;</button>
+                          <button class="next" onclick="nextSlide()">&#10095;</button>
+                        </div>
+                        
                       </div>
                     </div>
                   </div>
@@ -2463,7 +2489,40 @@ const areasWeServe = [
       } else {
         console.error("Div with id 'areas-we-serve' not found.");
       }
+  document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.querySelector(".slider");
+  const images = document.querySelectorAll(".slider img");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+
+  let index = 0;
+  const totalImages = images.length;
+
+  function updateSlider() {
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  nextBtn.addEventListener("click", function () {
+    index = (index + 1) % totalImages;
+    updateSlider();
+  });
+
+  prevBtn.addEventListener("click", function () {
+    index = (index - 1 + totalImages) % totalImages;
+    updateSlider();
+  });
+
+  // Auto-Slide every 5 seconds
+  setInterval(() => {
+    index = (index + 1) % totalImages;
+    updateSlider();
+  }, 5000);
+});
+
+
+
     </script>
+    
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> -->
     <!-- <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r128/examples/js/loaders/GLTFLoader.js"></script> -->
